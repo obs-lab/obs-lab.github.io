@@ -30,14 +30,15 @@ git checkout -q "$HISTORY_BRANCH" 2>/dev/null || git checkout -q -b "$HISTORY_BR
 git add -A
 git commit -m "${1:-update site}" || echo "Nothing new to commit, continuing."
 
-git branch -D "$PAGES_BRANCH" 2>/dev/null || true
-git checkout -q --orphan "$PAGES_BRANCH"
-git add -A
-git commit -q -m "obs-lab site"
+git checkout -q "$PAGES_BRANCH" 2>/dev/null || git checkout -q -b "$PAGES_BRANCH"
 
-git push -f origin "$PAGES_BRANCH"
+git checkout -q "$HISTORY_BRANCH" -- .
+git add -A
+git commit -q -m "${1:-obs-lab site}" || echo "Nothing new to publish, continuing."
+
+git push origin "$PAGES_BRANCH"
 
 git checkout -q "$HISTORY_BRANCH"
 
-echo "Published one commit to '$PAGES_BRANCH' on $EXPECTED_REMOTE"
+echo "Published to '$PAGES_BRANCH' on $EXPECTED_REMOTE"
 echo "Full history preserved locally on '$HISTORY_BRANCH'."
