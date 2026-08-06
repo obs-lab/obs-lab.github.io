@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OBS-LAB</title>
+<link rel="canonical" href="https://www.obs-lab.tech/">
+<link rel="icon" href="img/favicon/favicon.ico">
+<link rel="stylesheet" href="/style/index.css">
+</head>
+<body>
+
+  <div class="sitebanner">
+    OBS-LAB: Enterprise data and document intelligence, deployed on-premise.
+    <span>All data processed and stored within your own infrastructure.</span>
+  </div>
+
+  <div class="topbar">
+    <div class="wrap">
+      <a href="#features">Features</a>
+      <a href="#docs">Documentation</a>
+      <a href="#contact-clients">Contact</a>
+    </div>
+  </div>
+
+<div class="masthead">
+  <div class="wrap">
+    <div class="brand">
+      <img src="img/logo/obs-lab-icon.png" alt="OBS-LAB">
+      <div class="name">OBS<span>-LAB</span>
+        <span class="tag">On-premise data &amp; document intelligence</span>
+      </div>
+    </div>
+    <div class="searchbox">
+      <input type="text" id="q" placeholder="Search..." autocomplete="off">
+      <input type="submit" id="qgo" value="Go">
+      <div class="results" id="qres"></div>
+    </div>
+  </div>
+</div>
+
+<div class="nav">
+  <div class="wrap">
+    <button type="button" class="navtoggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <a href="#" class="navbrand"><img src="img/logo/obs-lab-icon.png" alt="">OBS<span>-LAB</span></a>
+    <ul id="navList">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#modules">Modules</a></li>
+      <li><a href="#privacy">Privacy</a></li>
+      <li><a href="#docs">Documentation</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact-clients">For clients</a></li>
+      <li><a href="#contact">Collaborate</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="left">
+      <h1>Analysis, charts and semantic search. Your data stays yours.</h1>
+      <p>OBS-LAB processes, analyses and searches a private collection of data,
+         documents, spreadsheets and images. Every model runs on your own
+         infrastructure. Nothing leaves your servers unless you deliberately enable a
+         cloud language model.</p>
+      <ul>
+        <li>Worksheets with 32 chart types</li>
+        <li>Curve fitting, statistical tests, forecasting</li>
+        <li>Simulations and robust statistics analysis</li>
+        <li>Clustering and entity-graph analysis</li>
+        <li>Semantic search with verified citations</li>
+        <li>Image analysis: visual search, colour and chart data extraction</li>
+        <li>Sandboxed code: Python, R, Octave, JavaScript, Java, C, C++</li>
+        <li>Multi-user with role-based access control</li>
+      </ul>
+      <a href="#contact-clients" class="btn">Request a deployment</a>
+      <br>
+      <br>
+      <a href="#features" class="btn alt">See what it does</a>
+    </div>
+    <div class="right">
+      <div class="slides" id="heroSlides">
+        <div class="frame">
+          <img class="on" src="img/mockup/obs_mockup_en_2.png" alt="Worksheets, plotting and entity analysis">
+          <img src="img/mockup/obs_mockup_en_3.png" alt="Image analysis and chart digitiser">
+          <img src="img/mockup/obs_mockup_en_1.png" alt="Documents, audit trail and correlation matrix">
+        </div>
+        <div class="dots" id="heroDots">
+          <button type="button" class="on" onclick="slideGo(0)"></button>
+          <button type="button" onclick="slideGo(1)"></button>
+          <button type="button" onclick="slideGo(2)"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap main">
+  <div class="col-main">
+
+    <h2 class="sec" id="features">What OBS-LAB does</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Data processing and analysis</h3>
+        <p>Charts, statistical analysis, forecasting and Monte Carlo simulation,
+           computed locally. A robust-statistics stack recovers reliable estimates
+           when a handful of anomalous observations would distort ordinary methods.</p>
+      </div>
+      <div class="card last">
+        <h3>Semantic document search</h3>
+        <p>Ask questions in natural language, in any language, and get answers that
+           cite the documents they come from. Dense retrieval with cross-encoder
+           reranking, and every report checked citation by citation.</p>
+      </div>
+      <div class="card">
+        <h3>Code and formulas</h3>
+        <p>Run scripts against your archive in Python, R, Octave, JavaScript, Java,
+           C and C++, each in a disposable sandboxed container with no access to the
+           host. HTML and CSS preview live in the browser.</p>
+      </div>
+      <div class="card last">
+        <h3>Clustering and entity analysis</h3>
+        <p>Group related material into themes across the whole archive and explore an
+           entity graph that resolves people, organisations and places and links
+           entities that appear together.</p>
+      </div>
+    </div>
+
+    <h2 class="sec" id="modules">Modules</h2>
+    <div class="tabs">
+      <div class="tabnav">
+        <button class="on" onclick="showTab(0,this)">Data</button>
+        <button onclick="showTab(1,this)">Documents</button>
+        <button onclick="showTab(2,this)">Code</button>
+        <button onclick="showTab(3,this)">Images</button>
+      </div>
+      <div class="tabbody">
+        <div class="on">
+          <p>Worksheets and plotting for tabular data, computed entirely on the local
+             machine. Type data straight into spreadsheet-style grids, no document
+             upload needed. Column roles (X, Y, error bars, labels, groups) drive every
+             plot, so an error column set once is reused by every chart that accepts it.
+             This panel is fully isolated: its data lives in a separate database and
+             never touches the document archive, the search index or the entity graph.</p>
+          <ul>
+            <li>32 chart types, from interactive 3D surfaces and contour maps to Piper,
+                ternary, wind-rose and violin diagrams</li>
+            <li>Curve fitting on nine nonlinear models, regression and peak analysis</li>
+            <li>Descriptive statistics, hypothesis tests, correlation matrices</li>
+            <li>Holt-Winters forecasting and Monte Carlo simulation</li>
+            <li>Robust regression for contaminated samples</li>
+            <li>Signal processing on the worksheet columns</li>
+          </ul>
+        </div>
+        <div>
+          <p>Ingestion handles chunking and embeddings; retrieval runs on a FAISS
+             index with cross-encoder reranking.</p>
+          <ul>
+            <li>Natural language questions in any language</li>
+            <li>Answers with citations verified against the source chunks</li>
+            <li>Clustering of the archive into themes</li>
+            <li>Entity graph with typed, source-verified relations</li>
+            <li>Audit trail of every query</li>
+          </ul>
+        </div>
+        <div>
+          <p>Scripts execute in disposable containers, with an ephemeral
+             permission-scoped token as the only route to the database.</p>
+          <ul>
+            <li>Python, R, Octave, JavaScript, Java, C, C++</li>
+            <li>Configurable timeout and memory ceiling per run</li>
+            <li>Plots returned to the interface and stored in the archive</li>
+            <li>HTML and CSS previewed live in the browser</li>
+          </ul>
+        </div>
+        <div>
+          <p>Images are indexed by visual content and by the text they contain.</p>
+          <ul>
+            <li>Search by phrase, for example "red car near a building"</li>
+            <li>OCR indexing of text inside images</li>
+            <li>Colour sampling and comparison</li>
+            <li>Chart digitiser: recover numeric series from a chart image</li>
+            <li>Visual and textual clustering</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="sec" id="privacy">Privacy by design</h2>
+    <p>The design principle is that your archive never leaves your infrastructure.
+       Models run on your hardware and data is stored locally. The only outbound
+       traffic possible is a cloud language model that you must explicitly enable.
+       Search, statistics, clustering and image analysis never depend on that choice.</p>
+    <p>A thin desktop shell built on Tauri loads a web interface served by a local
+       FastAPI backend. For the language model you choose one of three modes:</p>
+
+    <div class="modes">
+      <div class="mode">
+        <div class="inner">
+          <h4>Local, fully offline</h4>
+          <p>The language model runs on your own hardware. No request ever leaves the
+             machine, even for generated reports.</p>
+          <span class="flag" style="color: royalblue; text-decoration: underline;">No outbound traffic</span>
+        </div>
+      </div>
+      <div class="mode">
+        <div class="inner">
+          <h4>No model at all</h4>
+          <p>Skip generation entirely. Search, statistics, clustering and image
+             analysis keep working without any language model.</p>
+          <span class="flag" style="color: royalblue; text-decoration: underline;">No outbound traffic</span>
+        </div>
+      </div>
+      <div class="mode last">
+        <div class="inner">
+          <h4>Cloud API</h4>
+          <p>Opt in to an external provider only when you choose to. This is the single
+             route by which any data can leave your infrastructure.</p>
+          <span class="flag warn" style="color: royalblue; text-decoration: underline;">Outbound, opt-in</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Search, statistics, clustering and image analysis never depend on that choice.</p>
+
+    <h2 class="sec" id="deployment">On-premise deployment</h2>
+    <p>OBS-LAB is a B2B product. Each customer is set up on site: the platform is
+       installed and configured directly on your own servers, so the whole archive and
+       every model stay within your infrastructure. Because the deployment runs from the
+       source, it is not tied to a single operating system and can be fitted to the
+       environment your organisation already runs.</p>
+    <p>Setup, configuration and any adjustments are handled together with the developer
+       behind OBS-LAB, so the installation matches how your organisation actually works.
+       To start, use the client request form below.</p>
+
+    <h2 class="sec" id="faq">Frequently asked questions</h2>
+    <div class="faq">
+      <div class="qa">
+        <p class="q">Does my data ever leave my servers?</p>
+        <p class="a">No, unless you deliberately enable the cloud language model. In
+           local or no-model mode there is no outbound traffic at all. Ingestion,
+           search, statistics, clustering and image analysis all run on your hardware.</p>
+      </div>
+      <div class="qa">
+        <p class="q">How is OBS-LAB installed?</p>
+        <p class="a">Installation is done on site, on your own infrastructure, as part of
+           the deployment agreed with you. Because it runs from the source, it is not
+           limited to a single operating system.</p>
+      </div>
+      <div class="qa">
+        <p class="q">Is running code against my archive safe?</p>
+        <p class="a">Scripts run in disposable, sandboxed containers with no access to
+           the host. The only route to data is an ephemeral, permission-scoped token,
+           and each run has a configurable timeout and memory ceiling.</p>
+      </div>
+      <div class="qa">
+        <p class="q">Can several people use the same instance?</p>
+        <p class="a">Yes. Each person signs in and sees only their own material, with
+           role-based ownership and sharing across groups.</p>
+      </div>
+      <div class="qa">
+        <p class="q">Which languages can I run?</p>
+        <p class="a">Python, R, Octave, JavaScript, Java, C and C++, each in its own
+           container. HTML and CSS preview live in the browser.</p>
+      </div>
+      <div class="qa last">
+        <p class="q">Are the worksheets connected to my documents?</p>
+        <p class="a">No. The worksheet panel keeps its data in a separate database that
+           never touches the document archive, the search index or the entity graph.</p>
+      </div>
+    </div>
+
+    <div class="tailor">
+      <h3>Need OBS-LAB adapted to your setup?</h3>
+      <p>Because OBS-LAB runs on your own infrastructure, it can be shaped around how your
+         organisation actually works. If your company needs OBS-LAB with specific changes,
+         a particular integration, or help fitting it into your environment, feel free to ask.</p>
+      <p>You would talk directly with the developer behind OBS-LAB, so we can look at what you
+         need and agree on how to do it. Write to <a href="mailto:obslab2026@gmail.com">obslab2026@gmail.com</a>
+         or use the client request form, and we will take it from there.</p>
+    </div>
+
+  </div>
+
+  <div class="col-side">
+
+    <div class="panel" id="contact-clients">
+      <h3>For clients: request a deployment</h3>
+      <div class="body">
+        <table class="spec">
+          <tr><td class="k">Email</td><td><a href="mailto:obslab2026@gmail.com">obslab2026@gmail.com</a></td></tr>
+          <tr><td class="k">LinkedIn</td><td><a href="https://www.linkedin.com/company/obs-lab" target="_blank">OBS-LAB</a></td></tr>
+        </table>
+
+        <form class="cform" id="bform">
+          <p class="intro">OBS-LAB is deployed on your own infrastructure for your
+            organisation.<br>
+            Tell us about your setup and what you need, and we will get back to you to
+            agree on the deployment.<br>
+            Fields marked <span class="req">*</span> are required.</p>
+
+          <div class="row">
+            <label for="bf_name">Name <span class="req">*</span></label>
+            <input type="text" id="bf_name" name="name" maxlength="80">
+            <span class="hint">Enter your name.</span>
+          </div>
+
+          <div class="row">
+            <label for="bf_company">Company <span class="req">*</span></label>
+            <input type="text" id="bf_company" name="company" maxlength="120">
+            <span class="hint">Enter your organisation.</span>
+          </div>
+
+          <div class="row">
+            <label for="bf_mail">Work email <span class="req">*</span></label>
+            <input type="email" id="bf_mail" name="email" maxlength="120">
+            <span class="hint">Enter a valid email address.</span>
+          </div>
+
+          <div class="row">
+            <label for="bf_msg">What do you need <span class="req">*</span></label>
+            <textarea id="bf_msg" name="message" rows="4" maxlength="2000"
+              placeholder="Describe your infrastructure, expected users and what you would like to run"></textarea>
+            <span class="hint">A couple of sentences are enough.</span>
+          </div>
+
+          <label class="chk" id="bf_okrow">
+            <input type="checkbox" id="bf_ok" name="consent">
+            I consent to being contacted regarding this deployment request <span class="req">*</span>
+          </label>
+
+          <input type="text" name="_hp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="actions">
+            <button type="submit" class="cbtn" id="bbtn">Send request</button>
+            <span class="alt-mail">or <a href="mailto:obslab2026@gmail.com">email us</a></span>
+          </div>
+          <div class="cmsg" id="bmsg"></div>
+        </form>
+      </div>
+    </div>
+
+    <div class="panel" id="docs">
+      <h3>Documentation</h3>
+      <div class="body">
+        <p style="margin:0 0 8px 0">Guides are included with the platform:</p>
+        <table class="spec">
+          <tr><td class="k">COMMAND_GUIDE</td><td>Install, run, troubleshoot</td></tr>
+          <tr><td class="k">GUIDA_COMANDI</td><td>Italian edition</td></tr>
+          <tr><td class="k">CODE_GUIDE</td><td>Code execution languages</td></tr>
+          <tr><td class="k">GUIDA_CODICE</td><td>Italian edition</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel" id="contact">
+      <h3>Fancy getting involved?</h3>
+      <div class="body">
+        <table class="spec">
+          <tr><td class="k">Email</td><td><a href="mailto:obslab2026@gmail.com">obslab2026@gmail.com</a></td></tr>
+          <tr><td class="k">LinkedIn</td><td><a href="https://www.linkedin.com/company/obs-lab" target="_blank">OBS-LAB</a></td></tr>
+        </table>
+
+        <form class="cform" id="cform">
+          <p class="intro">OBS-LAB is a small independent project,
+            built step by step with a focus on creating reliable and privacy-oriented software.<br>
+            The project is open to collaboration: feedback, testing, translations, ideas and technical contributions are all welcome.<br>
+            If you are interested in what we are building, feel free to get in touch.<br>
+            Fields marked <span class="req">*</span> are required.</p>
+    
+          <div class="row">
+            <label for="cf_name">Name <span class="req">*</span></label>
+            <input type="text" id="cf_name" name="name" maxlength="80">
+            <span class="hint">Enter your name.</span>
+          </div>
+    
+          <div class="row">
+            <label for="cf_mail">Email <span class="req">*</span></label>
+            <input type="email" id="cf_mail" name="email" maxlength="120">
+            <span class="hint">Enter a valid email address.</span>
+          </div>
+    
+          <div class="row">
+            <label for="cf_msg">Message <span class="req">*</span></label>
+            <textarea id="cf_msg" name="message" rows="4" maxlength="2000"
+              placeholder="Tell me what you would like to do, or what idea you have in mind"></textarea>
+            <span class="hint">A couple of sentences are enough.</span>
+          </div>
+    
+          <label class="chk" id="cf_okrow">
+            <input type="checkbox" id="cf_ok" name="consent">
+            I consent to being contacted regarding this enquiry <span class="req">*</span>
+          </label>
+    
+          <input type="text" name="_hp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    
+          <div class="actions">
+            <button type="submit" class="cbtn" id="cbtn">Send request</button>
+            <span class="alt-mail">or <a href="mailto:obslab2026@gmail.com">email us</a></span>
+          </div>
+          <div class="cmsg" id="cmsg"></div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="strip">
+  <div class="wrap">
+    <img src="img/mockup/obs_mockup_en_3.png" alt="Image analysis and chart digitiser">
+    <div class="txt">
+      <h2>Recover numbers from a chart image</h2>
+      <p>Load a chart image, set the axis reference points, then click the data points
+         to read their values. The result is an estimate whose precision depends on the
+         resolution of the image, and it can be saved back into the archive as a series
+         or exported to CSV.</p>
+      <p>The same module indexes images by visual content and by the text inside them,
+         samples and compares colours, and clusters a picture collection visually or
+         textually.</p>
+      <a href="#contact-clients" class="btn">Request a deployment</a>
+    </div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+  var slideAt = 0;
+  var slideImgs = document.getElementById('heroSlides').getElementsByTagName('img');
+  var slideDots = document.getElementById('heroDots').getElementsByTagName('button');
+  
+  function slideGo(i) {
+    if (i < 0) { i = slideImgs.length - 1; }
+    if (i >= slideImgs.length) { i = 0; }
+    slideImgs[slideAt].className = '';
+    slideDots[slideAt].className = '';
+    slideAt = i;
+    slideImgs[slideAt].className = 'on';
+    slideDots[slideAt].className = 'on';
+  }
+  
+  function slideStep(d) { slideGo(slideAt + d); }
+  
+  var slideTimer = setInterval(function () { slideStep(1); }, 5000);
+  var slideBox = document.getElementById('heroSlides');
+  slideBox.onmouseover = function () { clearInterval(slideTimer); };
+  slideBox.onmouseout = function () {
+    slideTimer = setInterval(function () { slideStep(1); }, 5000);
+  };
+  
+  function showTab(i, btn) {
+    var nav = btn.parentNode;
+    var btns = nav.getElementsByTagName('button');
+    var panes = nav.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div');
+    for (var k = 0; k < btns.length; k++) { btns[k].className = ''; }
+    for (var k = 0; k < panes.length; k++) { panes[k].className = ''; }
+    btn.className = 'on';
+    panes[i].className = 'on';
+  }
+  
+  (function () {
+    var q = document.getElementById('q');
+    var go = document.getElementById('qgo');
+    var box = document.getElementById('qres');
+    var sel = -1, current = [], lastHit = null;
+  
+    var index = [];
+  
+    function textOf(el) {
+      if (!el) { return ''; }
+      var t = el.innerText || el.textContent || '';
+      return t.replace(/\s+/g, ' ').trim();
+    }
+  
+    function add(title, target, text) {
+      if (!text || !title) { return; }
+      index.push({ title: title, target: target, text: text, low: text.toLowerCase(),
+                   lowTitle: title.toLowerCase() });
+    }
+  
+    function buildIndex() {
+      index = [];
+  
+      var hero = document.querySelector('.hero .left');
+      if (hero) { add(textOf(hero.querySelector('h1')), hero, textOf(hero)); }
+  
+      var secs = document.querySelectorAll('h2.sec');
+      for (var i = 0; i < secs.length; i++) {
+        var h = secs[i], buf = '', n = h.nextSibling;
+        while (n && !(n.nodeType === 1 && n.tagName === 'H2')) {
+          if (n.nodeType === 1) { buf += ' ' + textOf(n); }
+          n = n.nextSibling;
+        }
+        add(textOf(h), h, (textOf(h) + ' ' + buf).replace(/\s+/g, ' ').trim());
+      }
+  
+      var cards = document.querySelectorAll('.card');
+      for (var c = 0; c < cards.length; c++) {
+        add(textOf(cards[c].querySelector('h3')), cards[c], textOf(cards[c]));
+      }
+  
+      var navBtns = document.querySelectorAll('.tabnav button');
+      var panes = document.querySelectorAll('.tabbody > div');
+      for (var p = 0; p < panes.length && p < navBtns.length; p++) {
+        var txt = textOf(navBtns[p]) + ' ' + textOf(panes[p]);
+        index.push({
+          title: 'Modules: ' + textOf(navBtns[p]),
+          target: panes[p], tabIndex: p, tabBtn: navBtns[p],
+          text: txt, low: txt.toLowerCase(),
+          lowTitle: ('Modules: ' + textOf(navBtns[p])).toLowerCase()
+        });
+      }
+  
+      var pans = document.querySelectorAll('.panel');
+      for (var s = 0; s < pans.length; s++) {
+        add(textOf(pans[s].querySelector('h3')), pans[s], textOf(pans[s]));
+      }
+  
+      var strip = document.querySelector('.strip .txt');
+      if (strip) { add(textOf(strip.querySelector('h2')), strip, textOf(strip)); }
+    }
+  
+    function esc(s) {
+      return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+  
+    function excerpt(text, low, term) {
+      var at = low.indexOf(term);
+      if (at < 0) { return esc(text.substring(0, 80)) + '...'; }
+      var from = Math.max(0, at - 30);
+      var cut = text.substring(from, Math.min(text.length, at + term.length + 50));
+      var rel = at - from;
+      return (from > 0 ? '...' : '') +
+             esc(cut.substring(0, rel)) +
+             '<mark>' + esc(cut.substring(rel, rel + term.length)) + '</mark>' +
+             esc(cut.substring(rel + term.length)) + '...';
+    }
+  
+    function search(term) {
+      term = term.toLowerCase().trim();
+      var out = [];
+      if (term.length < 2) { return out; }
+      for (var i = 0; i < index.length; i++) {
+        var it = index[i];
+        var inTitle = it.lowTitle.indexOf(term) >= 0;
+        var at = it.low.indexOf(term);
+        if (!inTitle && at < 0) { continue; }
+        out.push({ item: it,
+                   score: (inTitle ? 100 : 0) + (at < 0 ? 0 : 1000 - Math.min(at, 999)) });
+      }
+      out.sort(function (a, b) { return b.score - a.score; });
+      return out.slice(0, 8);
+    }
+  
+    function render(term) {
+      current = search(term);
+      sel = -1;
+      if (term.trim().length < 2) { close(); return; }
+      if (!current.length) {
+        box.innerHTML = '<div class="none">No results for "' + esc(term.trim()) + '"</div>';
+        box.className = 'results on';
+        return;
+      }
+      var html = '';
+      for (var i = 0; i < current.length; i++) {
+        var it = current[i].item;
+        html += '<a href="#" data-i="' + i + '"><span class="t">' + esc(it.title) +
+                '</span><span class="s">' +
+                excerpt(it.text, it.low, term.toLowerCase().trim()) + '</span></a>';
+      }
+      box.innerHTML = html;
+      box.className = 'results on';
+    }
+  
+    function close() { box.className = 'results'; sel = -1; }
+  
+    function clearHit() {
+      if (lastHit) {
+        lastHit.className = lastHit.className.replace(/\s*\bhit\b/, '');
+        lastHit = null;
+      }
+    }
+  
+    function open(i) {
+      var r = current[i];
+      if (!r) { return; }
+      var it = r.item;
+      if (it.tabBtn) { showTab(it.tabIndex, it.tabBtn); }
+      clearHit();
+      var el = it.target;
+      el.className = (el.className ? el.className + ' ' : '') + 'hit';
+      lastHit = el;
+      el.scrollIntoView(true);
+      window.scrollBy(0, -70);
+      close();
+      setTimeout(clearHit, 2500);
+    }
+  
+    function move(d) {
+      if (!current.length) { return; }
+      var links = box.getElementsByTagName('a');
+      if (!links.length) { return; }
+      if (sel >= 0 && links[sel]) { links[sel].className = ''; }
+      sel += d;
+      if (sel < 0) { sel = links.length - 1; }
+      if (sel >= links.length) { sel = 0; }
+      links[sel].className = 'sel';
+    }
+  
+    q.onkeyup = function (e) {
+      var k = e.keyCode;
+      if (k === 38 || k === 40 || k === 13 || k === 27) { return; }
+      render(q.value);
+    };
+  
+    q.onkeydown = function (e) {
+      var k = e.keyCode;
+      if (k === 40) { move(1); return false; }
+      if (k === 38) { move(-1); return false; }
+      if (k === 13) { open(sel >= 0 ? sel : 0); return false; }
+      if (k === 27) { close(); return false; }
+    };
+  
+    q.onfocus = function () { if (q.value.trim().length > 1) { render(q.value); } };
+  
+    go.onclick = function () {
+      if (!current.length) { render(q.value); }
+      open(sel >= 0 ? sel : 0);
+      return false;
+    };
+  
+    box.onclick = function (e) {
+      var t = e.target || e.srcElement;
+      while (t && t !== box && t.tagName !== 'A') { t = t.parentNode; }
+      if (t && t.tagName === 'A') { open(parseInt(t.getAttribute('data-i'), 10)); }
+      return false;
+    };
+  
+    document.onclick = function (e) {
+      var t = e.target || e.srcElement;
+      while (t) {
+        if (t.className && String(t.className).indexOf('searchbox') >= 0) { return; }
+        t = t.parentNode;
+      }
+      close();
+    };
+  
+    buildIndex();
+  })();
+  
+  function bindContactForm(cfg) {
+    var f = document.getElementById(cfg.form);
+    if (!f) { return; }
+    var msg = document.getElementById(cfg.msg);
+    var btn = document.getElementById(cfg.btn);
+
+    function fld(id) { return document.getElementById(id); }
+
+    var EJS_PUBLIC   = 'A4BhNMjAuj9-28gif';
+    var EJS_SERVICE  = 'service_uzt7ech';
+    var EJS_TEMPLATE = 'template_uu018z3';
+
+    if (window.emailjs) { emailjs.init({ publicKey: EJS_PUBLIC }); }
+
+    function mark(el, bad) {
+      var box;
+      if (el.type === 'checkbox') {
+        box = document.getElementById(cfg.okrow);
+      } else {
+        box = (el.parentNode && String(el.parentNode.className).indexOf('row') >= 0)
+              ? el.parentNode : el;
+      }
+      if (!box) { return; }
+      var c = String(box.className).replace(/\s*\berr\b/, '');
+      box.className = bad ? (c ? c + ' err' : 'err') : c;
+    }
+
+    function say(text, kind) {
+      msg.className = 'cmsg on ' + kind;
+      msg.innerHTML = text;
+    }
+
+    function reset(label) {
+      btn.disabled = false;
+      btn.textContent = label;
+    }
+
+    f.onsubmit = function (e) {
+      if (e && e.preventDefault) { e.preventDefault(); }
+
+      var name = fld(cfg.name), mail = fld(cfg.mail),
+          body = fld(cfg.body), ok = fld(cfg.ok);
+      var company = cfg.company ? fld(cfg.company) : null;
+      var bad = false, first = null;
+
+      function check(el, valid) {
+        mark(el, !valid);
+        if (!valid) { bad = true; if (!first) { first = el; } }
+      }
+
+      check(name, name.value.trim().length >= 2);
+      if (company) { check(company, company.value.trim().length >= 2); }
+      check(mail, /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(mail.value.trim()));
+      check(body, body.value.trim().length >= 10);
+      check(ok, ok.checked);
+
+      if (bad) {
+        say('Please complete all required fields.', 'bad');
+        if (first) { first.focus(); }
+        return false;
+      }
+      if (f.elements['_hp'].value) { return false; }
+
+      if (!window.emailjs) {
+        say('Mail service unavailable. Write to ' +
+            '<a href="mailto:obslab2026@gmail.com">obslab2026@gmail.com</a> instead.', 'bad');
+        return false;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      say('Sending...', 'wait');
+
+      var payload = {
+        name:    name.value.trim(),
+        email:   mail.value.trim(),
+        message: body.value.trim(),
+        subject: cfg.subject,
+        sent_at: new Date().toISOString()
+      };
+      if (company) { payload.company = company.value.trim(); }
+
+      emailjs.send(EJS_SERVICE, EJS_TEMPLATE, payload).then(function () {
+        f.reset();
+        reset(cfg.label);
+        say('Thank you. We will get back to you by email.', 'ok');
+      }, function (err) {
+        reset(cfg.label);
+        say('Sending failed (' + (err && err.text ? err.text : 'network error') + '). ' +
+            'Write to <a href="mailto:obslab2026@gmail.com">obslab2026@gmail.com</a> instead.', 'bad');
+      });
+
+      return false;
+    };
+
+    var fields = f.querySelectorAll('input, select, textarea');
+    for (var i = 0; i < fields.length; i++) {
+      (function (el) {
+        var handler = function () { mark(el, false); };
+        el.oninput = handler;
+        el.onchange = handler;
+      })(fields[i]);
+    }
+  }
+
+  bindContactForm({
+    form: 'bform', msg: 'bmsg', btn: 'bbtn', okrow: 'bf_okrow',
+    name: 'bf_name', company: 'bf_company', mail: 'bf_mail',
+    body: 'bf_msg', ok: 'bf_ok',
+    label: 'Send request', subject: 'Client deployment request'
+  });
+
+  bindContactForm({
+    form: 'cform', msg: 'cmsg', btn: 'cbtn', okrow: 'cf_okrow',
+    name: 'cf_name', mail: 'cf_mail', body: 'cf_msg', ok: 'cf_ok',
+    label: 'Send request', subject: 'Collaboration enquiry'
+  });
+
+  (function () {
+    var t = document.getElementById('navToggle');
+    var l = document.getElementById('navList');
+    if (!t || !l) { return; }
+    t.onclick = function () {
+      var open = l.className.indexOf('open') >= 0;
+      l.className = open ? l.className.replace(/\s*\bopen\b/, '') : (l.className ? l.className + ' open' : 'open');
+      t.setAttribute('aria-expanded', open ? 'false' : 'true');
+    };
+    l.onclick = function (e) {
+      var x = e.target || e.srcElement;
+      if (x && x.tagName === 'A') {
+        l.className = l.className.replace(/\s*\bopen\b/, '');
+        t.setAttribute('aria-expanded', 'false');
+      }
+    };
+  })();
+
+  (function () {
+    function cleanUrl() {
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    }
+    var links = document.getElementsByTagName('a');
+    for (var i = 0; i < links.length; i++) {
+      (function (a) {
+        var href = a.getAttribute('href');
+        if (!href || href.charAt(0) !== '#' || href.length < 2) { return; }
+        a.onclick = function (e) {
+          var target = document.getElementById(href.substring(1));
+          if (!target) { return; }
+          if (e && e.preventDefault) { e.preventDefault(); }
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              target.scrollIntoView({ behavior: 'smooth' });
+            });
+          });
+          cleanUrl();
+        };
+      })(links[i]);
+    }
+    if (window.location.hash) { cleanUrl(); }
+  })();
+
+  (function () {
+    function stampYear(root) {
+      var y = (root || document).querySelector('#year');
+      if (y) { y.textContent = new Date().getFullYear(); }
+    }
+    var mount = document.getElementById('site-footer');
+    if (!mount) { return; }
+    if (typeof fetch !== 'function' || window.location.protocol === 'file:') {
+      mount.innerHTML =
+        '<div class="foot"><div class="legal"><div class="wrap">' +
+        'OBS-LAB. On-premise data &amp; document intelligence. ' +
+        '<span class="copy">&copy; <span id="year">2026</span> OBS-LAB. All rights reserved.</span>' +
+        '</div></div></div>';
+      stampYear(mount);
+      return;
+    }
+    fetch('/layout/footer.html', { cache: 'no-cache' }).then(function (r) {
+      return r.ok ? r.text() : '';
+    }).then(function (html) {
+      if (html) { mount.innerHTML = html; stampYear(mount); }
+    }).catch(function () {});
+  })();
+  </script>
+
+</body>
+</html>
