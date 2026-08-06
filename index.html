@@ -403,8 +403,31 @@
       </div>
     </div>
 
+    <div class="panel" id="github">
+      <h3>Follow us on GitHub</h3>
+      <div class="body">
+        <a class="ghlink" href="https://github.com/obs-lab" target="_blank" rel="noopener" aria-label="OBS-LAB on GitHub">
+          <svg class="ghmark" viewBox="0 0 24 24" width="30" height="30" role="img" aria-hidden="true" focusable="false">
+            <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M12 1.5A10.5 10.5 0 0 0 8.68 22a.79.79 0 0 0 .17-.55v-1.93c-2.92.63-3.54-1.41-3.54-1.41a2.78 2.78 0 0 0-1.17-1.54c-.95-.65.08-.64.08-.64a2.2 2.2 0 0 1 1.61 1.08 2.24 2.24 0 0 0 3.05.87 2.24 2.24 0 0 1 .67-1.4c-2.33-.27-4.78-1.17-4.78-5.19a4.06 4.06 0 0 1 1.08-2.82 3.77 3.77 0 0 1 .1-2.78s.88-.28 2.88 1.07a9.94 9.94 0 0 1 5.24 0c2-1.35 2.88-1.07 2.88-1.07a3.77 3.77 0 0 1 .1 2.78 4.06 4.06 0 0 1 1.08 2.82c0 4.03-2.45 4.92-4.79 5.18a2.5 2.5 0 0 1 .72 1.95v2.89a.79.79 0 0 0 .17.55A10.5 10.5 0 0 0 12 1.5Z"></path>
+          </svg>
+          <span class="ghtext">Follow our organisation<br><span class="ghhandle">github.com/obs-lab</span></span>
+        </a>
+      </div>
+    </div>
+
   </div>
 </div>
+
+<style>
+#github .body { text-align: center; }
+#github .ghlink { display: inline-flex; align-items: center; gap: 10px; padding: 6px 4px; color: var(--head); font-size: 11px; line-height: 1.4; }
+#github .ghlink:hover { text-decoration: none; }
+#github .ghmark { color: var(--head-2); flex: 0 0 auto; transition: transform 0.35s ease, color 0.2s ease; }
+#github .ghlink:hover .ghmark { color: var(--accent); transform: rotate(-8deg) scale(1.08); }
+#github .ghtext { text-align: left; font-weight: bold; }
+#github .ghhandle { font-weight: normal; color: var(--accent); }
+#github .ghlink:hover .ghhandle { text-decoration: underline; }
+</style>
 
 <div class="strip">
   <div class="wrap">
