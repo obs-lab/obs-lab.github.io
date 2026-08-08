@@ -391,7 +391,7 @@ body { min-width: 980px; }
 
   .navtoggle {
     display: block; float: left; width: 40px; height: 34px; padding: 0;
-    margin: 6px 0; cursor: pointer; position: relative;
+    margin: 6px 0; top: 3px; cursor: pointer; position: relative;
     border: 0; background: transparent;
   }
   .navtoggle span {
