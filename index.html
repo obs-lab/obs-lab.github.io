@@ -11,15 +11,15 @@
 <body>
 
   <div class="sitebanner">
-    OBS-LAB: Enterprise data and document intelligence, deployed on-premise.
-    <span>All data processed and stored within your own infrastructure.</span>
+    OBS-LAB: Open-source data and document intelligence, deployed on-premise.
+    <span>Free and self-hostable under AGPL-3.0. All data processed and stored within your own infrastructure.</span>
   </div>
 
   <div class="topbar">
     <div class="wrap">
       <a href="#features">Features</a>
-      <a href="#docs">Documentation</a>
       <a href="#contact-clients">Contact</a>
+      <a href="#docs">Documentation</a>
     </div>
   </div>
 
@@ -47,9 +47,11 @@
       <li><a href="#features">Features</a></li>
       <li><a href="#modules">Modules</a></li>
       <li><a href="#privacy">Privacy</a></li>
-      <li><a href="#docs">Documentation</a></li>
+      <li><a href="#opensource">Open source</a></li>
       <li><a href="#faq">FAQ</a></li>
+      <li><a href="#cite">Cite us</a></li>
       <li><a href="#contact-clients">For clients</a></li>
+      <li><a href="#docs">Documentation</a></li>
       <li><a href="#contact">Collaborate</a></li>
     </ul>
   </div>
@@ -62,7 +64,8 @@
       <p>OBS-LAB processes, analyses and searches a private collection of data,
          documents, spreadsheets and images. Every model runs on your own
          infrastructure. Nothing leaves your servers unless you deliberately enable a
-         cloud language model.</p>
+         cloud language model. The whole platform is open source under AGPL-3.0: read
+         the code, self-host it for free, or have us deploy it for you.</p>
       <ul>
         <li>Worksheets with 32 chart types</li>
         <li>Curve fitting, statistical tests, forecasting</li>
@@ -73,9 +76,10 @@
         <li>Sandboxed code: Python, R, Octave, JavaScript, Java, C, C++</li>
         <li>Multi-user with role-based access control</li>
       </ul>
-      <a href="#contact-clients" class="btn">Request a deployment</a>
+      <a href="https://github.com/obs-lab/obs-lab" class="btn" target="_blank" rel="noopener">Get the source code</a>
       <br>
       <br>
+      <a href="#contact-clients" class="btn alt">Request a deployment</a>
       <a href="#features" class="btn alt">See what it does</a>
     </div>
     <div class="right">
@@ -223,15 +227,51 @@
 
     <p>Search, statistics, clustering and image analysis never depend on that choice.</p>
 
-    <h2 class="sec" id="deployment">On-premise deployment</h2>
-    <p>OBS-LAB is a B2B product. Each customer is set up on site: the platform is
-       installed and configured directly on your own servers, so the whole archive and
-       every model stay within your infrastructure. Because the deployment runs from the
-       source, it is not tied to a single operating system and can be fitted to the
-       environment your organisation already runs.</p>
-    <p>Setup, configuration and any adjustments are handled together with the developer
-       behind OBS-LAB, so the installation matches how your organisation actually works.
-       To start, use the client request form below.</p>
+    <h2 class="sec" id="opensource">Open source and Enterprise</h2>
+    <p>OBS-LAB is open source, released under the GNU Affero General Public License,
+       version 3 (AGPL-3.0). The full source code is public on GitHub. You can read it,
+       run it, study how it works, modify it and share your changes. Anyone can clone the
+       repository and self-host at no cost, on their own hardware, without contacting us.
+       The platform you build from source is the whole platform, with no paid tier hidden
+       behind it.</p>
+
+    <div class="tiers">
+      <div class="tier">
+        <div class="inner">
+          <h4>Open Source</h4>
+          <p class="tier-for">For community and internal projects</p>
+          <ul>
+            <li>Full platform under AGPL-3.0, free forever</li>
+            <li>Self-host from source on your own hardware</li>
+            <li>Python and FastAPI backend, Tauri desktop shell</li>
+            <li>FAISS HNSW retrieval with cross-encoder reranking</li>
+            <li>BAAI/bge-m3 embeddings, fully local models</li>
+            <li>Sandboxed code execution in disposable containers</li>
+            <li>Runs on the operating system your setup already uses</li>
+          </ul>
+          <p class="tier-cta"><a href="https://github.com/obs-lab/obs-lab" target="_blank" rel="noopener">github.com/obs-lab/obs-lab</a></p>
+        </div>
+      </div>
+      <div class="tier last">
+        <div class="inner">
+          <h4>Enterprise</h4>
+          <p class="tier-for">For enterprise and commercial projects</p>
+          <ul>
+            <li>Managed on-premise deployment on your servers</li>
+            <li>Customisation shaped around how your organisation works</li>
+            <li>Integrations with the systems you already run</li>
+            <li>Dedicated support and development available</li>
+            <li>Direct line to the developer behind OBS-LAB</li>
+            <li>Same open-source platform, set up and tuned for you</li>
+          </ul>
+          <p class="tier-cta"><a href="#contact-clients">Request a deployment</a></p>
+        </div>
+      </div>
+    </div>
+
+    <p>The Enterprise offering is a service, not a different licence. The software is the
+       same AGPL-3.0 platform in both cases: self-host it yourself for free, or have us
+       deploy, adapt and support it for your organisation.</p>
 
     <h2 class="sec" id="faq">Frequently asked questions</h2>
     <div class="faq">
@@ -242,10 +282,23 @@
            search, statistics, clustering and image analysis all run on your hardware.</p>
       </div>
       <div class="qa">
+        <p class="q">Is OBS-LAB really open source?</p>
+        <p class="a">Yes. The whole platform is released under AGPL-3.0 and the full
+           source code is public on GitHub. There is no closed core and no paid-only
+           features. You can read, run, modify and share it freely.</p>
+      </div>
+      <div class="qa">
         <p class="q">How is OBS-LAB installed?</p>
-        <p class="a">Installation is done on site, on your own infrastructure, as part of
-           the deployment agreed with you. Because it runs from the source, it is not
-           limited to a single operating system.</p>
+        <p class="a">Two ways. You can self-host it for free: clone the repository and
+           follow the command guide on your own servers. Or you can request a managed
+           on-premise deployment, where we install and configure it for you as a paid
+           service. Because it runs from the source, it is not limited to a single
+           operating system either way.</p>
+      </div>
+      <div class="qa">
+        <p class="q">Do I have to pay to use OBS-LAB?</p>
+        <p class="a">No. Self-hosting from the public source is free. Payment applies
+           only if you choose the optional managed deployment or a custom adaptation.</p>
       </div>
       <div class="qa">
         <p class="q">Is running code against my archive safe?</p>
@@ -270,15 +323,18 @@
       </div>
     </div>
 
-    <div class="tailor">
-      <h3>Need OBS-LAB adapted to your setup?</h3>
-      <p>Because OBS-LAB runs on your own infrastructure, it can be shaped around how your
-         organisation actually works. If your company needs OBS-LAB with specific changes,
-         a particular integration, or help fitting it into your environment, feel free to ask.</p>
-      <p>You would talk directly with the developer behind OBS-LAB, so we can look at what you
-         need and agree on how to do it. Write to <a href="mailto:obslab2026@gmail.com">obslab2026@gmail.com</a>
-         or use the client request form, and we will take it from there.</p>
-    </div>
+    <h2 class="sec" id="cite">Cite us</h2>
+    <p>If you use OBS-LAB for your projects, please cite it as:</p>
+    <div class="cite-block"><pre class="cite-code"><span class="c-kw">@software</span>{<span class="c-id">OBS-LAB</span>,
+  <span class="c-key">author</span> = {{OBS-LAB Team}},
+  <span class="c-key">title</span> = {{OBS-LAB: On-premise data and document intelligence.}},
+  <span class="c-key">url</span> = {<span class="c-val">https://obs-lab.github.io/</span>},
+  <span class="c-key">version</span> = {<span class="c-val">2.6.0</span>},
+  <span class="c-key">year</span> = {<span class="c-val">2026</span>},
+  <span class="c-key">month</span> = {<span class="c-val">12</span>},
+  <span class="c-key">address</span> = {<span class="c-val">Online</span>},
+  <span class="c-key">note</span> = {Available from <span class="c-val">https://obs-lab.github.io/</span> and <span class="c-val">https://github.com/obs-lab/obs-lab</span>}
+}</pre></div>
 
   </div>
 
@@ -293,8 +349,9 @@
         </table>
 
         <form class="cform" id="bform">
-          <p class="intro">OBS-LAB is deployed on your own infrastructure for your
-            organisation.<br>
+          <p class="intro">OBS-LAB is open source and free to self-host. This form is
+            for the optional managed deployment, where we install and configure it on
+            your own infrastructure for you.<br>
             Tell us about your setup and what you need, and we will get back to you to
             agree on the deployment.<br>
             Fields marked <span class="req">*</span> are required.</p>
@@ -349,6 +406,7 @@
           <tr><td class="k">GUIDA_COMANDI</td><td>Italian edition</td></tr>
           <tr><td class="k">CODE_GUIDE</td><td>Code execution languages</td></tr>
           <tr><td class="k">GUIDA_CODICE</td><td>Italian edition</td></tr>
+          <tr><td class="k">LICENSE</td><td>AGPL-3.0, full text</td></tr>
         </table>
       </div>
     </div>
@@ -403,14 +461,15 @@
       </div>
     </div>
 
-    <div class="panel" id="github">
-      <h3>Follow us on GitHub</h3>
+    <div class="panel" id="opensource-panel">
+      <h3>Open source: AGPL-3.0</h3>
       <div class="body">
-        <a class="ghlink" href="https://github.com/obs-lab" target="_blank" rel="noopener" aria-label="OBS-LAB on GitHub">
+        <p style="margin:0 0 8px 0">The full source code is public. Clone it, self-host it for free, or study how it works.</p>
+        <a class="ghlink" href="https://github.com/obs-lab/obs-lab" target="_blank" rel="noopener" aria-label="OBS-LAB source code on GitHub">
           <svg class="ghmark" viewBox="0 0 24 24" width="30" height="30" role="img" aria-hidden="true" focusable="false">
             <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M12 1.5A10.5 10.5 0 0 0 8.68 22a.79.79 0 0 0 .17-.55v-1.93c-2.92.63-3.54-1.41-3.54-1.41a2.78 2.78 0 0 0-1.17-1.54c-.95-.65.08-.64.08-.64a2.2 2.2 0 0 1 1.61 1.08 2.24 2.24 0 0 0 3.05.87 2.24 2.24 0 0 1 .67-1.4c-2.33-.27-4.78-1.17-4.78-5.19a4.06 4.06 0 0 1 1.08-2.82 3.77 3.77 0 0 1 .1-2.78s.88-.28 2.88 1.07a9.94 9.94 0 0 1 5.24 0c2-1.35 2.88-1.07 2.88-1.07a3.77 3.77 0 0 1 .1 2.78 4.06 4.06 0 0 1 1.08 2.82c0 4.03-2.45 4.92-4.79 5.18a2.5 2.5 0 0 1 .72 1.95v2.89a.79.79 0 0 0 .17.55A10.5 10.5 0 0 0 12 1.5Z"></path>
           </svg>
-          <span class="ghtext">Follow our organisation<br><span class="ghhandle">github.com/obs-lab</span></span>
+          <span class="ghtext">Browse the repository<br><span class="ghhandle">github.com/obs-lab/obs-lab</span></span>
         </a>
       </div>
     </div>
@@ -419,14 +478,54 @@
 </div>
 
 <style>
-#github .body { text-align: center; }
-#github .ghlink { display: inline-flex; align-items: center; gap: 10px; padding: 6px 4px; color: var(--head); font-size: 11px; line-height: 1.4; }
-#github .ghlink:hover { text-decoration: none; }
-#github .ghmark { color: var(--head-2); flex: 0 0 auto; transition: transform 0.35s ease, color 0.2s ease; }
-#github .ghlink:hover .ghmark { color: var(--accent); transform: rotate(-8deg) scale(1.08); }
-#github .ghtext { text-align: left; font-weight: bold; }
-#github .ghhandle { font-weight: normal; color: var(--accent); }
-#github .ghlink:hover .ghhandle { text-decoration: underline; }
+#opensource-panel .body { text-align: center; }
+#opensource-panel .body p { text-align: left; }
+#opensource-panel .ghlink { display: inline-flex; align-items: center; gap: 10px; padding: 6px 4px; color: var(--head); font-size: 11px; line-height: 1.4; }
+#opensource-panel .ghlink:hover { text-decoration: none; }
+#opensource-panel .ghmark { color: var(--head-2); flex: 0 0 auto; transition: transform 0.35s ease, color 0.2s ease; }
+#opensource-panel .ghlink:hover .ghmark { color: var(--accent); transform: rotate(-8deg) scale(1.08); }
+#opensource-panel .ghtext { text-align: left; font-weight: bold; }
+#opensource-panel .ghhandle { font-weight: normal; color: var(--accent); }
+#opensource-panel .ghlink:hover .ghhandle { text-decoration: underline; }
+
+.tiers { overflow: hidden; margin: 10px 0 10px 0; }
+.tier { float: left; width: 50%; box-sizing: border-box; padding-right: 8px; }
+.tier.last { padding-right: 0; padding-left: 8px; }
+.tier .inner {
+  border: 1px solid #000000; background: linear-gradient(#3a3a3a, #0a0a0a);
+  padding: 9px 11px; height: 100%; box-sizing: border-box;
+}
+.tier.last .inner {
+  background: linear-gradient(#3a3a3a, #0a0a0a); border-color: #000000;
+}
+.tier h4 { margin: 0 0 2px 0; font-size: 13px; color: var(--accent-2); }
+.tier .tier-for {
+  margin: 0 0 6px 0; font-size: 11px; font-style: italic; color: #9a9a9a;
+  border-bottom: 1px solid #333333; padding-bottom: 5px;
+}
+.tier ul { margin: 0 0 8px 15px; padding: 0; }
+.tier li { margin-bottom: 2px; font-size: 11px; color: #cdd4e8; }
+.tier .tier-cta { margin: 0; font-size: 12px; font-weight: bold; }
+.tier .tier-cta a { color: var(--accent-2); }
+.tier .tier-cta a:hover { color: #9fccf4; }
+
+.cite-block {
+  margin: 8px 0 4px 0; border: 1px solid var(--line-soft);
+  background: #f6f7fa; border-radius: 4px;
+}
+.cite-code {
+  margin: 0; padding: 12px 14px; color: #2f3646;
+  font-family: "Consolas", "Menlo", "Courier New", monospace; font-size: 10px;
+  line-height: 1.55; white-space: pre-wrap; word-break: break-word;
+}
+.cite-code .c-kw { color: #b34a6a; font-weight: bold; }
+.cite-code .c-id { color: #7a5ccc; }
+.cite-code .c-key { color: #2f6fb0; }
+.cite-code .c-val { color: #b05a2a; }
+
+@media (max-width: 1010px) {
+  .tier, .tier.last { float: none; width: auto; padding: 0; margin-bottom: 8px; }
+}
 </style>
 
 <div class="strip">
