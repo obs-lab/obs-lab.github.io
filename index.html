@@ -258,7 +258,6 @@
             <li>Managed on-premise deployment, set up for you</li>
             <li>Customisation and integrations for your environment</li>
             <li>Dedicated support and development</li>
-            <li>Direct line to the developer behind OBS-LAB</li>
             <li>Priority fixes and upgrade assistance</li>
           </ul>
           <p class="tier-cta"><a href="#contact-clients">Request a deployment</a></p>
@@ -484,8 +483,8 @@
 #opensource-panel .ghhandle { font-weight: normal; color: var(--accent); }
 #opensource-panel .ghlink:hover .ghhandle { text-decoration: underline; }
 
-.tiers { overflow: hidden; margin: 10px 0 10px 0; }
-.tier { float: left; width: 50%; box-sizing: border-box; padding-right: 8px; }
+.tiers { display: flex; align-items: stretch; margin: 10px 0 10px 0; }
+.tier { width: 50%; box-sizing: border-box; padding-right: 8px; }
 .tier.last { padding-right: 0; padding-left: 8px; }
 .tier .inner {
   border: 1px solid #000000; background: linear-gradient(#3a3a3a, #0a0a0a);
@@ -520,7 +519,8 @@
 .cite-code .c-val { color: #b05a2a; }
 
 @media (max-width: 1010px) {
-  .tier, .tier.last { float: none; width: auto; padding: 0; margin-bottom: 8px; }
+  .tiers { display: block; }
+  .tier, .tier.last { width: auto; padding: 0; margin-bottom: 8px; }
 }
 </style>
 
