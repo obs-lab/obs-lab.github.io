@@ -562,11 +562,11 @@
   
   function slideStep(d) { slideGo(slideAt + d); }
   
-  var slideTimer = setInterval(function () { slideStep(1); }, 5000);
+  var slideTimer = setInterval(function () { slideStep(1); }, 10000);
   var slideBox = document.getElementById('heroSlides');
   slideBox.onmouseover = function () { clearInterval(slideTimer); };
   slideBox.onmouseout = function () {
-    slideTimer = setInterval(function () { slideStep(1); }, 5000);
+    slideTimer = setInterval(function () { slideStep(1); }, 10000);
   };
   
   function showTab(i, btn) {
