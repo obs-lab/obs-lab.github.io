@@ -75,6 +75,9 @@
         <li>Image analysis: visual search, colour and chart data extraction</li>
         <li>Sandboxed code: Python, R, Octave, JavaScript, Java, C, C++</li>
         <li>Multi-user with role-based access control</li>
+        <li>Agents you define: sandboxed scripts, tool loops, or your own endpoints</li>
+        <li>Voice: dictate a question, hear the answer, or talk hands free</li>
+        <li>Files read in place on the machine, never uploaded, never indexed</li>
       </ul>
       <a href="https://github.com/obs-lab/obs" class="btn" target="_blank" rel="noopener">Get the source code</a>
       <br>
@@ -86,14 +89,9 @@
       <div class="slides" id="heroSlides">
         <div class="frame">
           <img class="on" src="img/mockup/obs_mockup_en_4.png" alt="obs_mockup_en_4">
-          <img src="img/mockup/obs_mockup_en_2.png" alt="obs_mockup_en_2">
           <img src="img/mockup/obs_mockup_en_1.png" alt="obs_mockup_en_1">
         </div>
-        <div class="dots" id="heroDots">
-          <button type="button" class="on" onclick="slideGo(0)"></button>
-          <button type="button" onclick="slideGo(1)"></button>
-          <button type="button" onclick="slideGo(2)"></button>
-        </div>
+        <div class="dots" id="heroDots"></div>
       </div>
     </div>
   </div>
@@ -128,6 +126,30 @@
            entity graph that resolves people, organisations and places and links
            entities that appear together.</p>
       </div>
+      <div class="card">
+        <h3>Agents you build yourself</h3>
+        <p>Register your own agents and let them work on the archive: a script in the
+           sandbox, a step loop where the model calls declared tools, or a call to an
+           agent you built elsewhere. Every run is bounded and recorded step by step.</p>
+      </div>
+      <div class="card last">
+        <h3>Voice</h3>
+        <p>Dictate a question and hear the answer read back, or leave it hands free and
+           hold a conversation. Both directions run on your machine, and the voice
+           follows the language of the answer.</p>
+      </div>
+      <div class="card">
+        <h3>Files already on the machine</h3>
+        <p>Point OBS-LAB at a folder and it browses, searches and analyses what is
+           there, reading in place. Nothing is uploaded, nothing is indexed, and taking
+           the folder off the list takes the access away with it.</p>
+      </div>
+      <div class="card last">
+        <h3>Multi-user and access control</h3>
+        <p>Everyone signs in and sees only their own material, with role-based
+           ownership and sharing across groups. The filter sits inside the retrieval
+           pipeline, not on top of the interface.</p>
+      </div>
     </div>
 
     <h2 class="sec" id="modules">Modules</h2>
@@ -137,6 +159,9 @@
         <button onclick="showTab(1,this)">Documents</button>
         <button onclick="showTab(2,this)">Code</button>
         <button onclick="showTab(3,this)">Images</button>
+        <button onclick="showTab(4,this)">Agents</button>
+        <button onclick="showTab(5,this)">Voice</button>
+        <button onclick="showTab(6,this)">Local files</button>
       </div>
       <div class="tabbody">
         <div class="on">
@@ -165,6 +190,7 @@
             <li>Clustering of the archive into themes</li>
             <li>Entity graph with typed, source-verified relations</li>
             <li>Audit trail of every query</li>
+            <li>Answers follow the language of the question, not a fixed setting</li>
           </ul>
         </div>
         <div>
@@ -185,6 +211,50 @@
             <li>Colour sampling and comparison</li>
             <li>Chart digitiser: recover numeric series from a chart image</li>
             <li>Visual and textual clustering</li>
+          </ul>
+        </div>
+        <div>
+          <p>Agents are defined by the user and run with the permissions of the person
+             who owns them, so they can never reach material that person cannot see.</p>
+          <ul>
+            <li>Script agents: your own code, in the same disposable container as the
+                Code panel</li>
+            <li>Assisted agents: a bounded step loop where the model calls only the
+                tools you declared</li>
+            <li>External agents: an HTTP call to an agent you built elsewhere</li>
+            <li>Step budget and wall-clock ceiling on every run, with a full trace</li>
+            <li>Local and private network targets work out of the box; public hosts
+                require an explicit allow list</li>
+            <li>Optional periodic triggers, off by default</li>
+          </ul>
+        </div>
+        <div>
+          <p>Speech recognition and speech synthesis both run on the local machine. The
+             browser speech API is deliberately not used, because on some browsers it
+             sends the audio to a remote service.</p>
+          <ul>
+            <li>Dictate a question straight into the query bar</li>
+            <li>Hear an answer read back, and stop it at any point</li>
+            <li>Hands free conversation: it listens, answers aloud and listens again</li>
+            <li>The voice follows the language of the answer, Italian or English</li>
+            <li>If no local engine is installed the controls say so, with no remote
+                fallback</li>
+          </ul>
+        </div>
+        <div>
+          <p>A panel that reads files where they already are. Nothing is uploaded,
+             nothing is indexed and nothing is written to disk, so this material stays
+             outside the archive and outside the search index.</p>
+          <ul>
+            <li>Register the folders OBS-LAB may read, remove them to revoke access</li>
+            <li>Browse, search by name and search inside text files</li>
+            <li>Text, PDF, Word and Excel are read and analysed on request</li>
+            <li>Paths are resolved to their canonical form, so links cannot step outside
+                a registered folder</li>
+            <li>System folders, the OBS data directory, credential folders and key
+                material are refused whatever you register</li>
+            <li>On a server, only an administrator assigns folders, and the panel can be
+                switched off entirely</li>
           </ul>
         </div>
       </div>
@@ -226,6 +296,15 @@
     </div>
 
     <p>Search, statistics, clustering and image analysis never depend on that choice.</p>
+
+    <p>The same principle governs the features added around the archive. Speech
+       recognition and speech synthesis run on your hardware, not through the browser
+       speech API, which on some browsers ships the audio to a remote service. The
+       local files panel reads the disk and never writes to it, never uploads and never
+       indexes, so removing a folder from the allowed list takes the access away with
+       nothing left behind. Agents reach the archive only through the same permission
+       filter as their owner, and an agent that points outside your network needs an
+       explicit allow list before it can connect.</p>
 
     <h2 class="sec" id="opensource">Open source and Enterprise</h2>
     <p>OBS-LAB is open source, released under the GNU Affero General Public License,
@@ -312,10 +391,33 @@
         <p class="a">Python, R, Octave, JavaScript, Java, C and C++, each in its own
            container. HTML and CSS preview live in the browser.</p>
       </div>
-      <div class="qa last">
+      <div class="qa">
         <p class="q">Are the worksheets connected to my documents?</p>
         <p class="a">No. The worksheet panel keeps its data in a separate database that
            never touches the document archive, the search index or the entity graph.</p>
+      </div>
+      <div class="qa">
+        <p class="q">What can an agent actually do?</p>
+        <p class="a">It runs with the permissions of the person who owns it, so it can
+           never read material that person cannot already see. Every run has a step
+           budget and a time ceiling, and the full trace is kept. Agents that call an
+           address outside your network are refused unless an administrator adds that
+           host to an allow list.</p>
+      </div>
+      <div class="qa">
+        <p class="q">Does the local files panel upload my files?</p>
+        <p class="a">No. It reads them where they are. Nothing is copied into the
+           archive, nothing is indexed and nothing is written to disk. You register the
+           folders it may read, and removing one takes the access away immediately.
+           System folders, the OBS data directory, credential folders and key material
+           are refused whatever you register.</p>
+      </div>
+      <div class="qa last">
+        <p class="q">Is the voice feature sending my audio anywhere?</p>
+        <p class="a">No. Transcription and speech synthesis both run on your machine.
+           The browser speech API is deliberately not used, because on some browsers it
+           sends the audio to a remote service. If no local engine is installed, the
+           voice controls say so instead of falling back to a remote one.</p>
       </div>
     </div>
 
@@ -548,7 +650,25 @@
 <script>
   var slideAt = 0;
   var slideImgs = document.getElementById('heroSlides').getElementsByTagName('img');
-  var slideDots = document.getElementById('heroDots').getElementsByTagName('button');
+  var slideDotBox = document.getElementById('heroDots');
+
+  (function () {
+    slideDotBox.innerHTML = '';
+    for (var d = 0; d < slideImgs.length; d++) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', 'Slide ' + (d + 1));
+      b.onclick = (function (n) { return function () { slideGo(n); }; })(d);
+      slideDotBox.appendChild(b);
+    }
+    for (var s = 0; s < slideImgs.length; s++) {
+      if (slideImgs[s].className === 'on') { slideAt = s; }
+    }
+    if (!slideImgs.length) { slideDotBox.style.display = 'none'; }
+    else { slideImgs[slideAt].className = 'on'; slideDotBox.children[slideAt].className = 'on'; }
+  })();
+
+  var slideDots = slideDotBox.getElementsByTagName('button');
   
   function slideGo(i) {
     if (i < 0) { i = slideImgs.length - 1; }
