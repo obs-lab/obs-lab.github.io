@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-EXPECTED_DIR="$HOME/Desktop/obs-web-web-github"
+EXPECTED_DIR="$HOME/dev/obs-web"
 EXPECTED_REMOTE="https://github.com/obs-lab/obs-lab.github.io.git"
 HISTORY_BRANCH="history"
 PAGES_BRANCH="main"
